@@ -4,6 +4,7 @@
 {% block body_block %}
 <h1>Rango says...</h1>
     <div>
+        <p>visits: {{ visits }}</p>
        {% if user.is_authenticated %}
         Hi {{ user.username }}
         {% else %}
