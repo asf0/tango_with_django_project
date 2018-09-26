@@ -1,9 +1,28 @@
 {% extends 'rango/base.html' %}
 {% block body_block %}
-    <h1>Register here</h1>
-    <form action="." method="post">
+    <h2 class="form-signin-heading">Sign Up Here</h2>
+    <form role="form" action="." method="post">
         {% csrf_token %}
-        {{ form.as_p}}
-        <input type="submit" value="Submit"/>
+        <div class="form-group">
+        <p class="required">
+            <label for="id_username" class="required">Username:</label>
+            <input class="form-control "type="text" name="username" id="id_username" maxlength="30"/>
+        <span class="helptext"> Requerid 30 characters or fewer. Letters, digits and @/./+/-/_ only. </span>
+        </p>
+        <p class="Requerid">
+            <label class="requerid" for="id_email">E-Mail:</label>
+            <input class="form-control "type="text" name="email" id="id_email"/>
+        </p>
+        <p class="required">´
+            <label class="required" for="id_password1"> Password:</label>
+             <input class="form-control" id="id_password1" name="password1" type="password" />
+        </p> 
+        <p class="required"> 
+            <label class="required" for="id_password2"> Password confirmation:</label> 
+            <input class="form-control" id="id_password2" name="password2" type="password" />
+            <span class="helptext"> Enter the same password as before, for verification. </span>
+        </p>
+        </div>
+        <button class="btn btn-default" type="submit">Submit</button>
     </form>
 {% endblock %}
